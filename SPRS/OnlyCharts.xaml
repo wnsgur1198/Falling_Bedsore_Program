@@ -1,0 +1,249 @@
+﻿<Window x:Class="Loadcell.OnlyCharts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chartCtrl="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             mc:Ignorable="d" 
+             Height="781.712" Width="937.729"
+             WindowStyle="None"
+             WindowState="Maximized"
+             ResizeMode="NoResize"
+             Background="Black">
+    <Grid KeyDown="Grid_KeyDown">
+        <Grid.Resources>
+            <Style TargetType="chartCtrl:Chart">
+                <!--<Setter Property="Width" Value="650"/>
+                <Setter Property="Height" Value="350"/>-->
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <chartCtrl:Chart x:Name="UL_Chart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" Grid.Row="0" Grid.Column="0">
+            <chartCtrl:Chart.TitleStyle>
+                <Style TargetType="datavis:Title">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.TitleStyle>
+
+            <chartCtrl:Chart.LegendStyle>
+                <Style TargetType="datavis:Legend">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.LegendStyle>
+
+            <chartCtrl:Chart.PlotAreaStyle>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </chartCtrl:Chart.PlotAreaStyle>
+
+            <chartCtrl:LineSeries DependentValueBinding="{Binding Value}" 
+                                  IndependentValueBinding="{Binding Name}" 
+                                  ItemsSource="{Binding}">
+
+                <chartCtrl:LineSeries.DataPointStyle>
+                    <Style TargetType="chartCtrl:LineDataPoint">
+                        <Setter Property="Background" Value="Red"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                        <Setter Property="Width" Value="0"/>
+                        <Setter Property="Height" Value="0"/>
+                    </Style>
+                </chartCtrl:LineSeries.DataPointStyle>
+
+                <chartCtrl:LineSeries.DependentRangeAxis>
+                    <chartCtrl:LinearAxis Orientation="Y" ShowGridLines="True" Minimum="0" Maximum="40" Interval="1"/>
+                </chartCtrl:LineSeries.DependentRangeAxis>
+
+                <chartCtrl:LineSeries.IndependentAxis>
+                    <chartCtrl:DateTimeAxis Name="xAxisUL" ShowGridLines="True" Orientation="X">
+                        <chartCtrl:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartCtrl:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:mm:ss}" />
+                            </Style>
+                        </chartCtrl:DateTimeAxis.AxisLabelStyle>
+                    </chartCtrl:DateTimeAxis>
+                </chartCtrl:LineSeries.IndependentAxis>
+
+            </chartCtrl:LineSeries>
+        </chartCtrl:Chart>
+
+
+        <chartCtrl:Chart x:Name="UR_Chart" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1">
+            <chartCtrl:Chart.TitleStyle>
+                <Style TargetType="datavis:Title">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.TitleStyle>
+
+            <chartCtrl:Chart.LegendStyle>
+                <Style TargetType="datavis:Legend">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.LegendStyle>
+
+            <chartCtrl:Chart.PlotAreaStyle>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </chartCtrl:Chart.PlotAreaStyle>
+
+            <chartCtrl:LineSeries DependentValueBinding="{Binding Value}" 
+                                  IndependentValueBinding="{Binding Name}" 
+                                  ItemsSource="{Binding}">
+
+                <chartCtrl:LineSeries.DataPointStyle>
+                    <Style TargetType="chartCtrl:LineDataPoint">
+                        <Setter Property="Background" Value="Orange"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                        <Setter Property="Width" Value="0"/>
+                        <Setter Property="Height" Value="0"/>
+                    </Style>
+                </chartCtrl:LineSeries.DataPointStyle>
+
+                <chartCtrl:LineSeries.DependentRangeAxis>
+                    <chartCtrl:LinearAxis Orientation="Y" ShowGridLines="True" Minimum="0" Maximum="40" Interval="1"/>
+                </chartCtrl:LineSeries.DependentRangeAxis>
+
+                <chartCtrl:LineSeries.IndependentAxis>
+                    <chartCtrl:DateTimeAxis Name="xAxisUR" ShowGridLines="True" Orientation="X">
+                        <chartCtrl:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartCtrl:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:mm:ss}" />
+                            </Style>
+                        </chartCtrl:DateTimeAxis.AxisLabelStyle>
+                    </chartCtrl:DateTimeAxis>
+                </chartCtrl:LineSeries.IndependentAxis>
+
+            </chartCtrl:LineSeries>
+        </chartCtrl:Chart>
+
+
+        <chartCtrl:Chart x:Name="DL_Chart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,0" Grid.Row="2" Grid.Column="0">
+            <chartCtrl:Chart.TitleStyle>
+                <Style TargetType="datavis:Title">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.TitleStyle>
+
+            <chartCtrl:Chart.LegendStyle>
+                <Style TargetType="datavis:Legend">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.LegendStyle>
+
+            <chartCtrl:Chart.PlotAreaStyle>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </chartCtrl:Chart.PlotAreaStyle>
+
+            <chartCtrl:LineSeries DependentValueBinding="{Binding Value}" 
+                                  IndependentValueBinding="{Binding Name}" 
+                                  ItemsSource="{Binding}">
+
+                <chartCtrl:LineSeries.DataPointStyle>
+                    <Style TargetType="chartCtrl:LineDataPoint">
+                        <Setter Property="Background" Value="Blue"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                        <Setter Property="Width" Value="0"/>
+                        <Setter Property="Height" Value="0"/>
+                    </Style>
+                </chartCtrl:LineSeries.DataPointStyle>
+
+                <chartCtrl:LineSeries.DependentRangeAxis>
+                    <chartCtrl:LinearAxis Orientation="Y" ShowGridLines="True" Minimum="0" Maximum="40" Interval="1"/>
+                </chartCtrl:LineSeries.DependentRangeAxis>
+
+                <chartCtrl:LineSeries.IndependentAxis>
+                    <chartCtrl:DateTimeAxis Name="xAxisDL" ShowGridLines="True" Orientation="X">
+                        <chartCtrl:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartCtrl:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:mm:ss}" />
+                            </Style>
+                        </chartCtrl:DateTimeAxis.AxisLabelStyle>
+                    </chartCtrl:DateTimeAxis>
+                </chartCtrl:LineSeries.IndependentAxis>
+
+            </chartCtrl:LineSeries>
+        </chartCtrl:Chart>
+
+
+        <chartCtrl:Chart x:Name="DR_Chart" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Grid.Row="2" Grid.Column="1">
+            <chartCtrl:Chart.TitleStyle>
+                <Style TargetType="datavis:Title">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.TitleStyle>
+
+            <chartCtrl:Chart.LegendStyle>
+                <Style TargetType="datavis:Legend">
+                    <Setter Property="Width" Value="0"/>
+                    <Setter Property="Height" Value="0"/>
+                </Style>
+            </chartCtrl:Chart.LegendStyle>
+
+            <chartCtrl:Chart.PlotAreaStyle>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </chartCtrl:Chart.PlotAreaStyle>
+
+            <chartCtrl:LineSeries DependentValueBinding="{Binding Value}" 
+                                  IndependentValueBinding="{Binding Name}" 
+                                  ItemsSource="{Binding}">
+
+                <chartCtrl:LineSeries.DataPointStyle>
+                    <Style TargetType="chartCtrl:LineDataPoint">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                        <Setter Property="Width" Value="0"/>
+                        <Setter Property="Height" Value="0"/>
+                    </Style>
+                </chartCtrl:LineSeries.DataPointStyle>
+
+                <chartCtrl:LineSeries.DependentRangeAxis>
+                    <chartCtrl:LinearAxis Orientation="Y" ShowGridLines="True" Minimum="0" Maximum="40" Interval="1"/>
+                </chartCtrl:LineSeries.DependentRangeAxis>
+
+                <chartCtrl:LineSeries.IndependentAxis>
+                    <chartCtrl:DateTimeAxis Name="xAxisDR" ShowGridLines="True" Orientation="X">
+                        <chartCtrl:DateTimeAxis.AxisLabelStyle>
+                            <Style TargetType="chartCtrl:DateTimeAxisLabel">
+                                <Setter Property="StringFormat" Value="{}{0:mm:ss}" />
+                            </Style>
+                        </chartCtrl:DateTimeAxis.AxisLabelStyle>
+                    </chartCtrl:DateTimeAxis>
+                </chartCtrl:LineSeries.IndependentAxis>
+
+            </chartCtrl:LineSeries>
+        </chartCtrl:Chart>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="pauseBtn" Content="Pause" VerticalAlignment="Top" Width="130" Height="50" Click="Button_pause_Click"/>
+            <Button x:Name="restartBtn" Content="ReStart" Width="130" Height="50" Click="Button_restart_Click"/>
+            <Button x:Name="resetBtn" Content="Reset" Width="130" Height="50" Click="Button_reset_Click"/>
+        </StackPanel>        
+
+    </Grid>
+</Window>
