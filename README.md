@@ -1,8 +1,8 @@
 # Falling_Bedsore_Program
 >학부생 3학년 2학기 때 낙창 및 욕창 방지 프로그램
 
-![](readme-img/header.jpg)
-
+![](readme-img/header1.png)
+![](readme-img/header2.png)
 
 ## Installation
 
@@ -14,9 +14,8 @@ Visual Studio2019로 실행함
 
  * fallbed ver1.0.0 : 환자를 위한 낙상알림 및 욕창판단 프로그램
  
- 선영이네가 개발했던 프로그램을 의미함
+ 다른 팀이 개발했던 프로그램을 의미함
  
-
  * fallbed ver1.1.0 : 낙상 및 욕창 판단을 위한 분석용 프로그램
  ver1.0.0로부터 불필요한 기능 삭제, 필요한 기능 추가
 
@@ -31,9 +30,7 @@ Visual Studio2019로 실행함
  - 체중차트모드 : 체중에 대한 차트를 그림
  - 무게중심차트모드 : 무게중심에 대한 차트를 그림
 
-
  * fallbed ver1.1.1은 초당 들어오는 데이터 개수 조정, 조건에 따른 DB저장, 일정 이상 움직임이 감지되면 그 때의 환자 자세를 촬영하는 기능 추가 예정
- 
 
 ## Development setup
 
@@ -41,20 +38,12 @@ Visual Studio2019로 실행함
 
 ## Release History
 
-* 1.2.0
-    * doc: Edit README.md to include a program image size 300pixel
-    * README.md 내용 수정
+* 1.1.1
+    * second
+    * Atmega 코드 추가
 
-* 1.2.0
-    * forth
-    * 셀 내용 변경 불가로 수정
-
-* 1.1.0
-    * third
-    * 창 버튼 및 크기 조절 수정
-
-* 1.0.0
-    * first commit
+* 1.1.1
+    * first
     * 개발 완료
 
 ## Meta
