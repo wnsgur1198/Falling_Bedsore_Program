@@ -1,8 +1,16 @@
 # Falling_Bedsore_Program
-학부생 3학년 2학기 때 낙창 및 욕창 방지 프로그램
+>학부생 3학년 2학기 때 낙창 및 욕창 방지 프로그램
 
-// 작성일 : 2019.09.19
-// 작성자 : 김준혁
+![](readme-img/header.jpg)
+
+
+## Installation
+
+Windows10:
+
+Visual Studio2019로 실행함
+
+## Usage example
 
  * fallbed ver1.0.0 : 환자를 위한 낙상알림 및 욕창판단 프로그램
  
@@ -26,3 +34,41 @@
 
  * fallbed ver1.1.1은 초당 들어오는 데이터 개수 조정, 조건에 따른 DB저장, 일정 이상 움직임이 감지되면 그 때의 환자 자세를 촬영하는 기능 추가 예정
  
+
+## Development setup
+
+.Net Framework 4.7.2 사용함
+
+## Release History
+
+* 1.2.0
+    * doc: Edit README.md to include a program image size 300pixel
+    * README.md 내용 수정
+
+* 1.2.0
+    * forth
+    * 셀 내용 변경 불가로 수정
+
+* 1.1.0
+    * third
+    * 창 버튼 및 크기 조절 수정
+
+* 1.0.0
+    * first commit
+    * 개발 완료
+
+## Meta
+
+김준혁 – wnsgur1198@naver.com
+
+[https://github.com/wnsgur1198/Korean_history-TOEIC-reminder]
+
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
